@@ -1,0 +1,70 @@
+[
+    {
+        "Category": "Residential",
+        "ProjectName": "Sunset Ridge Villa",
+        "BHKNo": "5",
+        "Location": "Malibu, Califonia, USA",
+        "Price": "$500k",
+        "img":"/images/Residential1.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Willowbrook Home",
+        "BHKNo": "3",
+        "Location": "Portland, Oregon, USA",
+        "Price": "$500k",
+        "img":"/images/Residential2.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Whispering Retreat",
+        "BHKNo": "4",
+        "Location": "Aspen, Colorado, USA",
+        "Price": "$500k",
+        "img":"/images/Residential3.jpg"
+    },
+
+    {
+        "Category": "Commercial",
+        "ProjectName": "Skyline Corporate Tower",
+        "BHKNo": "-",
+        "Location": "Chicago, Illinois, USA",
+        "Price": "$1.2M"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Metro Business Plaza",
+        "BHKNo": "-",
+        "Location": "Dallas, Texas, USA",
+        "Price": "$850k"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Harbor Trade Center",
+        "BHKNo": "-",
+        "Location": "Seattle, Washington, USA",
+        "Price": "$950k"
+    },
+
+    {
+        "Category": "Apartments",
+        "ProjectName": "Palmview Apartments",
+        "BHKNo": "2",
+        "Location": "Miami, Florida, USA",
+        "Price": "$350k"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Skyline Heights Apartment",
+        "BHKNo": "3",
+        "Location": "New York City, USA",
+        "Price": "$600k"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Suncrest Urban Flats",
+        "BHKNo": "1",
+        "Location": "Los Angeles, California, USA",
+        "Price": "$280k"
+    }
+]

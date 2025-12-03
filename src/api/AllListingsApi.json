@@ -1,0 +1,247 @@
+[
+    {
+        "Category": "Residential",
+        "ProjectName": "Sunset Ridge Villa",
+        "BHKNo": "5",
+        "Location": "Malibu, California, USA",
+        "Price": "$500k",
+        "img": "/images/Residential1.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Willowbrook Home",
+        "BHKNo": "3",
+        "Location": "Portland, Oregon, USA",
+        "Price": "$500k",
+        "img": "/images/Residential2.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Whispering Retreat",
+        "BHKNo": "4",
+        "Location": "Aspen, Colorado, USA",
+        "Price": "$500k",
+        "img": "/images/Residential3.jpg"
+    },
+    
+    {
+        "Category": "Residential",
+        "ProjectName": "Pine Valley Estate",
+        "BHKNo": "5",
+        "Location": "Austin, Texas, USA",
+        "Price": "$720k",
+        "img": "/images/Residential1.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Ocean View Manor",
+        "BHKNo": "4",
+        "Location": "San Diego, California, USA",
+        "Price": "$910k",
+        "img": "/images/Residential3.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Lakeside Cabin",
+        "BHCNo": "3",
+        "Location": "Salt Lake City, Utah, USA",
+        "Price": "$450k",
+        "img": "/images/Residential2.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Greenwood Cottage",
+        "BHKNo": "3",
+        "Location": "Charleston, South Carolina, USA",
+        "Price": "$650k",
+        "img": "/images/Residential1.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Desert Oasis House",
+        "BHKNo": "4",
+        "Location": "Phoenix, Arizona, USA",
+        "Price": "$580k",
+        "img": "/images/Residential3.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Riverbend Ranch",
+        "BHKNo": "5",
+        "Location": "Nashville, Tennessee, USA",
+        "Price": "$880k",
+        "img": "/images/Residential2.jpg"
+    },
+    {
+        "Category": "Residential",
+        "ProjectName": "Hilltop Bungalow",
+        "BHKNo": "2",
+        "Location": "Denver, Colorado, USA",
+        "Price": "$420k",
+        "img": "/images/Residential1.jpg"
+    },
+    
+    {
+        "Category": "Commercial",
+        "ProjectName": "Skyline Corporate Tower",
+        "BHKNo": "-",
+        "Location": "Chicago, Illinois, USA",
+        "Price": "$1.2M",
+        "img": "/images/Commercial1.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Metro Business Plaza",
+        "BHKNo": "-",
+        "Location": "Dallas, Texas, USA",
+        "Price": "$850k",
+        "img": "/images/Commercial2.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Harbor Trade Center",
+        "BHKNo": "-",
+        "Location": "Seattle, Washington, USA",
+        "Price": "$950k",
+        "img": "/images/Commercial3.jpg"
+    },
+
+    {
+        "Category": "Commercial",
+        "ProjectName": "Union Street Loft",
+        "BHKNo": "-",
+        "Location": "Boston, Massachusetts, USA",
+        "Price": "$780k",
+        "img": "/images/Commercial1.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Silicon Tech Hub",
+        "BHKNo": "-",
+        "Location": "San Jose, California, USA",
+        "Price": "$1.5M",
+        "img": "/images/Commercial2.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Capital Office Park",
+        "BHKNo": "-",
+        "Location": "Raleigh, North Carolina, USA",
+        "Price": "$620k",
+        "img": "/images/Commercial3.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Midtown Retail Space",
+        "BHKNo": "-",
+        "Location": "Atlanta, Georgia, USA",
+        "Price": "$890k",
+        "img": "/images/Commercial1.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Waterfront Warehouse",
+        "BHKNo": "-",
+        "Location": "Tampa, Florida, USA",
+        "Price": "$1.1M",
+        "img": "/images/Commercial2.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Financial District Center",
+        "BHKNo": "-",
+        "Location": "Philadelphia, Pennsylvania, USA",
+        "Price": "$1.35M",
+        "img": "/images/Commercial3.jpg"
+    },
+    {
+        "Category": "Commercial",
+        "ProjectName": "Innovation Labs",
+        "BHKNo": "-",
+        "Location": "Cambridge, Massachusetts, USA",
+        "Price": "$990k",
+        "img": "/images/Commercial1.jpg"
+    },
+
+    {
+        "Category": "Apartments",
+        "ProjectName": "Palmview Apartments",
+        "BHKNo": "2",
+        "Location": "Miami, Florida, USA",
+        "Price": "$350k",
+        "img": "/images/Apartments1.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Skyline Heights Apartment",
+        "BHKNo": "3",
+        "Location": "New York City, USA",
+        "Price": "$600k",
+        "img": "/images/Apartments2.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Suncrest Urban Flats",
+        "BHKNo": "1",
+        "Location": "Los Angeles, California, USA",
+        "Price": "$280k",
+        "img": "/images/Apartments3.jpg"
+    },
+    
+    {
+        "Category": "Apartments",
+        "ProjectName": "Metropolitan Suites",
+        "BHKNo": "2",
+        "Location": "Houston, Texas, USA",
+        "Price": "$390k",
+        "img": "/images/Apartments1.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "The Gallery Residences",
+        "BHKNo": "3",
+        "Location": "San Francisco, California, USA",
+        "Price": "$750k",
+        "img": "/images/Apartments2.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Central Park Towers",
+        "BHKNo": "1",
+        "Location": "Chicago, Illinois, USA",
+        "Price": "$320k",
+        "img": "/images/Apartments3.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Harbour Lights Condos",
+        "BHKNo": "4",
+        "Location": "Baltimore, Maryland, USA",
+        "Price": "$510k",
+        "img": "/images/Apartments1.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "University Edge Lofts",
+        "BHKNo": "2",
+        "Location": "Ann Arbor, Michigan, USA",
+        "Price": "$340k",
+        "img": "/images/Apartments2.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "Tech Square Dwellings",
+        "BHKNo": "3",
+        "Location": "Seattle, Washington, USA",
+        "Price": "$590k",
+        "img": "/images/Apartments3.jpg"
+    },
+    {
+        "Category": "Apartments",
+        "ProjectName": "The Zenith Penthouses",
+        "BHKNo": "4",
+        "Location": "Las Vegas, Nevada, USA",
+        "Price": "$780k",
+        "img": "/images/Apartments1.jpg"
+    }
+]

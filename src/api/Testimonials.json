@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Sophie Moore",
+        "data":"25.11.2024",
+        "message":"From consultation to closing, they provided exceptional service and guidance",
+        "img":"/images/testimonial1.jpg"
+    },
+    {
+        "name": "John Walker",
+        "date": "2.1.2025",
+        "message":"The team made the home-buying process extremely seamless and stress‑free for us. We love it, we love the services, the staff and the momo",
+        "img": "/images/testimonial2.jpg"
+    },
+    {
+        "name": "Kyle Walker",
+        "date": "10.1.2025",
+        "message":"Their expertise in real estate helped us find the perfect home with best quality possible",
+        "img": "/images/testimonial3.jpg"
+    },
+    { 
+        "name":"Anna Lee",
+        "date":"15.2.2025",
+        "message":"Great experience from start to finish haaaaaaa",
+        "img":"/images/testimonial4.jpg" 
+    },
+    { 
+        "name":"Mark Hall",
+        "date":"20.3.2025",
+        "message":"Professional and helpful throughout haaaaaaaa",
+        "img":"/images/testimonial5.jpg"
+    }
+]
