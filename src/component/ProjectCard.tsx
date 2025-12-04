@@ -3,7 +3,14 @@ import { Card,CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-export default function ProjectCard(props){
+import { type projectCardData } from "@/interfaces/project.tsx";
+
+interface props{
+    item:projectCardData,
+    i:number
+}
+
+export default function ProjectCard(props:props){
     const {item,i}=props;
     const [isLiked,setIsLiked]=useState(false);
 
@@ -12,10 +19,12 @@ export default function ProjectCard(props){
         setIsLiked(!isLiked);
     }
 
+    console.log(`Item ${i}:`,item);
+
     return(
-        <Card key={i} className="rounded-3xl shadow-md overflow-hidden">
-            <div className="relative">
-                <img src={item.img} alt={item.ProjectName} className="w-full h-80 object-cover"/>
+        <Card key={i} className="w-full h-full rounded-3xl shadow-md flex flex-grow flex-shrink-0 flex-col justify-between self-center overflow-hidden">
+            <div className="relative h-1/2 ">
+                <img src={item.image} alt={item.projectName} className="w-full h-80 object-cover"/>
                 <Badge className="absolute top-3 left-3 bg-white text-black px-3 py-1 rounded-full shadow">
                     Featured
                 </Badge>
@@ -24,11 +33,11 @@ export default function ProjectCard(props){
                 </button>
             </div>
 
-            <CardContent className="p-5 flex flex-col gap-2">
-                <h3 className="font-medium">{item.ProjectName}-{item.BHKNo}</h3>
-                <p className="text-gray-500 text-sm">{item.Location}</p>
-                <div className="flex justify-between items-center mt-2">
-                    <span className="text-orange-500 font-semibold text-lg">{item.price}</span>
+            <CardContent className="p-5 flex flex-col justify-between h-1/2 ">
+                <h3 className="font-medium">{item.projectName}-{item.bhkno}</h3>
+                <p className="text-gray-500 text-sm">{item.street},<br/>{item.city}</p>
+                <div className="flex justify-between items-center mt-2 static bottom-2 left-2">
+                    <h3 className="text-orange-500 !font-semibold  text-lg">${item.price}</h3>
                     <Button variant="outline" className="rounded-full">
                         View Details
                     </Button>

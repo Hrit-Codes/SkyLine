@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button"
 import companyLogo from "../assets/images/CompanyLogo.svg"
 import { useNavigate } from "react-router-dom"
-
-export default function Navbar(){
+export default function LargeScreenNavbar(){
 
     const navigate= useNavigate();
 

@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react";
-import AllSelectings from "../api/AllListingsApi.json"
 import ProjectCard from "./ProjectCard";
-export default function SelectedListings(){
-    const category="Residential";
-    const [filteredListings,setFilteredListings]=useState([]);
+import type { projectCardData } from "@/interfaces/project";
+export default function SelectedListings(props){
+    const {data}=props;
 
-    useEffect(()=>{
-        const filteredList=AllSelectings.filter(item=>item.Category===category);
-        setFilteredListings(filteredList);
-
-    },[category])
     return(
         <div className="w-full">
             <div className="m-4 grid grid-cols-3">
-                {filteredListings.map((item,i)=>(
-                    <ProjectCard key={item.ProjectName} item={item} i={i}/>
+                {data.map((item:projectCardData,i:number)=>(
+                    <div className="w-90 h-150 sm:w-120 shrink-0 ">
+                        <ProjectCard key={i} item={item} i={i}/>
+                    </div>
                 ))}
-
             </div>
             
         </div>

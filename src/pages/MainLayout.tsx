@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <div className="w-full bg-background">
+    <div className="w-screen bg-background">
       <Header />
       <main className="min-h-screen">
         <Outlet />

@@ -1,12 +1,24 @@
 import { Card,CardContent } from "@/components/ui/card";
 import testimonials from "../api/Testimonials.json";
 import { ArrowLeft , ArrowRight, Quote } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function TestimonialsSection(){
 
     const [index,setIndex]=useState(0);
+    const [visibleCount, setVisibleCount]=useState(3);
     
+    useEffect(()=>{
+        const updateCount=()=>{
+            const newCount= window.innerWidth<768? 1:3;
+            setVisibleCount(newCount);
+        }
+        updateCount();
+
+        window.addEventListener(`resize`,updateCount);
+        return () => window.removeEventListener('resize', updateCount);
+    },[]);
+
     const getVisibleTestimonials=()=>{
         const list=[];
         for (let i=0;i<3;i++){
@@ -30,11 +42,11 @@ export default function TestimonialsSection(){
                     <p>See how we've turned clients' real estate dreams into reality with exceptional service</p>
                 </div>
 
-                <div className="flex justify-center gap-15 ">
+                <div className="flex justify-center gap-10 ">
                     {getVisibleTestimonials().map((t,i)=>{
                         const isCenter=i===1;
                         return(
-                        <Card key={i} className={`rounded-2xl w-100 h-90 md:h-70 shadow-sm border transition-all ease-linear duration-500 ${isCenter ? "scale-110 bg-white shadow-lg" : "scale-95 opacity-80"}`}>
+                        <Card key={i} className={`rounded-2xl w-90 h-100 md:w-100 md:h-100 flex-shrink-0 flex-grow shadow-sm border transition-all ease-linear duration-500 ${isCenter ? "scale-110 bg-white shadow-lg" : "scale-95 opacity-80"}`}>
                             <CardContent className="space-y-4 h-full flex flex-col justify-between">
                                 <div className="w-full h-1/4 flex items-center gap-4">
                                     <img src={t.img} alt={t.name} className="w-14 h-14 rounded-full object-cover"/>
@@ -45,7 +57,7 @@ export default function TestimonialsSection(){
                                     <Quote className="text-gray-300 ml-auto"/>
                                 </div>
                                 <div className="w-full h-3/4 flex justify-center items-center">
-                                <p className="text-gray-700leading-relaxed text-wrap **break-words**">{t.message}</p>
+                                <p className="text-gray-700 leading-relaxed text-wrap wrap-break-words">{t.message}</p>
                                 </div>
                             </CardContent>
                         </Card>

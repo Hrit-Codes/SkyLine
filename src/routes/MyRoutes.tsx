@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage.tsx";
 import AboutPage from "../pages/AboutPage.tsx";
 import ContactPage from "../pages/ContactPage.tsx";
 import ListingsPage from "@/pages/LisitingsPage.tsx";
+import NotFoundPage from "@/pages/NotFound";
 
 const MyRoutes=() =>{
     return(
@@ -15,6 +16,7 @@ const MyRoutes=() =>{
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/listings" element={<ListingsPage/>}/>
         </Route>
+        <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </>
     )

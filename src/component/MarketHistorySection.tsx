@@ -14,7 +14,7 @@ export default function MarketHistorySection(){
 
                         <div className="w-full m-4 grid grid-cols-2 grid-rows-2 gap-4 place-items-center max-w-full ">
                         {MarketApi.map((detail,index)=>(
-                            <div className="w-40 h-40 border-2 flex justify-center items-center bg-primary text-primary-foreground rounded-xl border-2 border-primary" key={index}> 
+                            <div className="w-40 h-40  flex justify-center items-center bg-primary text-primary-foreground rounded-xl border-2 border-primary" key={index}> 
                                 <MarketDetailCard value={detail.value} context={detail.context}/>
                             </div>
                             ))}   
