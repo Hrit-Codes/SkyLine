@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import ProjectCard from "./ProjectCard";
 import ProjectCardSkeleton from "./ProjectCardSkeleton";
@@ -7,43 +8,34 @@ import { Button } from "@/components/ui/button";
 import type { ListingSection2Props, projectCardData } from "@/interfaces/project";
 
 export default function ListingSection2({isLoading ,filteredProjectData, handleViewStatus}:ListingSection2Props) {
-const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 4000,
-    cssEase: "ease-in-out",
-    arrows: false,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: true,
-            }
-        }
-    ]
-};
+
+    const [windowWidth, setWindowWidth] = useState(
+        typeof window !== "undefined" ? window.innerWidth : 1200
+    );
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const getSlidesToShow = () => {
+        if (windowWidth <= 640) return 1;
+        if (windowWidth <= 1024) return 2;
+        return 3;
+    };
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: getSlidesToShow(),
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 4000,
+        cssEase: "ease-in-out",
+        arrows: false,
+    };
 
     const visibleCount = 3;
 

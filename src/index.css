@@ -205,3 +205,39 @@ p{
   }
 }
 
+/* Fix for react-slick layout issues */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-track {
+  position: relative;
+  display: flex !important;
+  align-items: stretch;
+}
+
+.slick-slide {
+  display: flex !important;
+  height: auto;
+  align-items: stretch;
+}
+
+.slick-slide > div {
+  width: 100%;
+  display: flex;
+}
+
+/* Fix for testimonial cards in slider */
+.slick-slide .rounded-2xl {
+  height: 100%;
+}
