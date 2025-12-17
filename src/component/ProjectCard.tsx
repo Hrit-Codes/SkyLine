@@ -1,50 +1,126 @@
 import { useState } from "react";
-import { Card,CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { type projectCardData } from "@/interfaces/project.tsx";
+import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+import { type projectCardData } from "@/interfaces/project";
 
-interface props{
-    item:projectCardData,
-    i:number
+import totalFloorArea from "../assets/images/total_floor_area.png";
+import landArea from "../assets/images/land_area.png";
+import bedrooms from "../assets/images/bedroom_icon.png";
+import bathrooms from "../assets/images/bathrooms.png";
+import furnished from "../assets/images/funished.png";
+import totalRooms from "../assets/images/total_rooms.png";
+
+interface Props {
+  item: projectCardData;
 }
 
-export default function ProjectCard(props:props){
-    const {item,i}=props;
-    const [isLiked,setIsLiked]=useState(false);
+export default function ProjectCard({ item }: Props) {
+  const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
 
-    const toggleLike=()=>{
-        console.log("Heart Clicked");
-        setIsLiked(!isLiked);
-    }
+  return (
+    <Card className="w-full rounded-3xl shadow-md overflow-hidden bg-white flex flex-col">
+      {/* Image */}
+      <div className="relative">
+        <img
+          src={item.image}
+          alt={item.projectName}
+          className="w-full h-80 object-cover"
+        />
 
-    console.log(`Item ${i}:`,item);
+        <Badge className="absolute top-3 left-3 bg-white text-black px-3 py-1 rounded-full shadow">
+          Featured
+        </Badge>
 
-    return(
-        <Card key={i} className="w-full h-full rounded-3xl shadow-md flex flex-grow flex-shrink-0 flex-col justify-between self-center overflow-hidden">
-            <div className="relative h-1/2 ">
-                <img src={item.image} alt={item.projectName} className="w-full h-80 object-cover"/>
-                <Badge className="absolute top-3 left-3 bg-white text-black px-3 py-1 rounded-full shadow">
-                    Featured
-                </Badge>
-                <button className="absolute top-3 right-3 bg-white size-10 rounded-full flex items-center justify-center shadow">
-                    <Heart className={`w-5 h-5 transition-colors hover:cursor-pointer ${isLiked ? "text-red-500 fill-red-500":"text-gray-400 fill-transparent"}`} onClick={toggleLike}/>
-                </button>
-            </div>
+        <button
+          className="absolute top-3 right-3 bg-white size-10 rounded-full flex items-center justify-center shadow"
+          onClick={() => setIsLiked(!isLiked)}
+        >
+          <Heart
+            className={`w-5 h-5 ${
+              isLiked
+                ? "text-red-500 fill-red-500"
+                : "text-gray-400 fill-transparent"
+            }`}
+          />
+        </button>
+      </div>
 
-            <CardContent className="p-5 flex flex-col justify-between h-1/2 ">
-                <h3 className="font-medium">{item.projectName}-{item.bhkno}</h3>
-                <p className="text-gray-500 text-sm">{item.street},<br/>{item.city}</p>
-                <div className="flex justify-between items-center mt-2 static bottom-2 left-2">
-                    <h3 className="text-orange-500 !font-semibold  text-lg">${item.price}</h3>
-                    <Button variant="outline" className="rounded-full">
-                        View Details
-                    </Button>
-                </div>
-            </CardContent>
+      <CardContent className="px-5 py-4 flex flex-col gap-3">
+        {/* Common Header */}
+        <h3 className="text-lg font-semibold text-gray-900">
+          {item.projectName}
+        </h3>
 
-        </Card>
-    )
-    
+        <p className="text-gray-500 text-sm">
+          {item.street}, {item.city}
+        </p>
+
+        <div className="flex justify-between items-end">
+          <div className="flex flex-col gap-3">
+            {/* Price */}
+            <p className="text-orange-500 font-semibold text-lg">
+              {item.propertyType === "Apartment"
+                ? `$${item.price} / Month`
+                : `$${item.price}`}
+            </p>
+
+            {/* Residential */}
+            {item.propertyType === "Residential" && (
+              <div className="flex gap-4 text-sm">
+                <Feature icon={bedrooms} value={item.totalBedrooms} />
+                <Feature icon={bathrooms} value={item.totalBathrooms} />
+                <Feature icon={landArea} value={item.landArea} />
+              </div>
+            )}
+
+            {/* Apartment */}
+            {item.propertyType === "Apartment" && (
+              <div className="flex gap-4 text-sm">
+                <Feature icon={totalRooms} value={item.totalRooms} />
+                <Feature icon={bathrooms} value={item.totalBathrooms} />
+                <Feature
+                  icon={furnished}
+                  value={item.furnished ? "Yes" : "No"}
+                />
+              </div>
+            )}
+
+            {/* Commercial */}
+            {item.propertyType === "Commercial" && (
+              <div className="flex items-center gap-1 text-sm">
+                <Avatar>
+                  <AvatarImage src={totalFloorArea} className="w-5 h-5" />
+                </Avatar>
+                {item.totalFloorArea}
+              </div>
+            )}
+          </div>
+
+          {/* Button */}
+          <button
+            onClick={() => navigate(`/full-detail/${item._id}`)}
+            className="relative text-primary font-medium group hover:cursor-pointer"
+          >
+            Learn More
+            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-primary transition-all duration-300 group-hover:w-0" />
+          </button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Feature({ icon, value }: { icon: string; value: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-1">
+      <Avatar>
+        <AvatarImage src={icon} className="w-5 h-5" />
+      </Avatar>
+      {value}
+    </div>
+  );
 }

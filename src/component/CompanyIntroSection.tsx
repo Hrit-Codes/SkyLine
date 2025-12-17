@@ -1,10 +1,14 @@
 import modernHouse from "../assets/images/ModernHouse.jpg"
 import downArrow from "../assets/images/down-arrow.png";
 
-export default function CompanyIntroSection(props){
+interface Props{
+    onScrollDown:()=>void
+
+}
+export default function CompanyIntroSection({onScrollDown}:Props){
     return(
-        <div className="w-full">
-            <div className="m-2 flex flex-col md:flex-row">
+        <div className="w-full bg-section">
+            <div className="flex flex-col md:flex-row ">
 
                 {/* Left Image */}
                 <div className="w-full min-h-fit flex justify-center items-center md:w-1/2">
@@ -12,9 +16,11 @@ export default function CompanyIntroSection(props){
                 </div>
 
                 {/* Right Section */}
-                <div className="w-full md:w-1/2 relative flex flex-col justify-center items-center py-6">
+                {/* The 'relative' class is no longer needed since we removed absolute positioning on the arrow */}
+                <div className="w-full md:w-1/2 flex flex-col justify-center items-center py-6">
 
-                    <div className="m-4 flex flex-col justify-center items-center">
+                    {/* Text Content */}
+                    <div className="m-4 flex flex-col justify-center items-center space-y-2">
                         <h1>We Redefine Real Estate</h1>
                         <h3>Innovation & Trust</h3>
 
@@ -24,9 +30,18 @@ export default function CompanyIntroSection(props){
                         </p>
                     </div>
 
-                    {/* Arrow at Bottom */}
-                    <button onClick={()=>props.onScrollDown()}>
-                        <img src={downArrow} alt="Down Arrow" className="w-12 h-12 absolute bottom-4 hidden md:block ease-in-out hover:cursor-pointer animate-bounce [animation-duration-2s] [animation-iteration-count:infinite] " />
+                    {/* Arrow at Bottom - Now centered using parent flexbox */}
+                    <button 
+                        onClick={() => onScrollDown()}
+                        className="mt-6 p-2 rounded-full ease-in-out hover:cursor-pointer 
+                                   animate-bounce [animation-duration-2s] repeat-infinite"
+                    >
+                        <img 
+                            src={downArrow} 
+                            alt="Down Arrow" 
+                            // Removed absolute and fixed width/height
+                            className="w-10 h-10" 
+                        />
                     </button>
 
                 </div>
