@@ -8,42 +8,46 @@ import type { ListingSection2Props, projectCardData } from "@/interfaces/project
 
 export default function ListingSection2({isLoading ,filteredProjectData, handleViewStatus}:ListingSection2Props) {
 const settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 1000, 
-        autoplaySpeed: 4000, 
-        cssEase: "ease-in-out", 
-        arrows:false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    centerPadding: "40px",
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1, 
-                    centerPadding: "60px", 
-                    arrows: false, 
-                }
-            },
-            {
-                breakpoint: 480, 
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "30px", 
-                    arrows: false,
-                    dots: true,
-                }
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    arrows: false,
+    responsive: [
+        {
+            breakpoint: 1024, 
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
             }
-        ]
-    };
+        },
+        {
+            breakpoint: 768, 
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true, 
+                centerPadding: "40px", 
+                arrows: false,
+            }
+        },
+        {
+            breakpoint: 480, 
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true, 
+                centerPadding: "20px", 
+                arrows: false,
+                dots: true,
+            }
+        }
+    ]
+};
 
     const visibleCount=3;
 

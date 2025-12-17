@@ -7,42 +7,46 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function TestimonialsSection() {
 const settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 1000, // Slower for better UX
-        autoplaySpeed: 4000, // Longer delay
-        cssEase: "ease-in-out", // Smoother animation
-        arrows:false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    centerPadding: "40px",
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1, // ✅ Should show 1 card at 430px
-                    centerPadding: "60px", // Add space on sides
-                    arrows: false, // Hide arrows on mobile
-                }
-            },
-            {
-                breakpoint: 480, // Specifically for mobile
-                settings: {
-                    slidesToShow: 1,
-                    centerPadding: "30px", // Less padding for very small screens
-                    arrows: false,
-                    dots: true,
-                }
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    arrows: false,
+    responsive: [
+        {
+            breakpoint: 1024, 
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
             }
-        ]
-    };
+        },
+        {
+            breakpoint: 768, 
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true, 
+                centerPadding: "40px", 
+                arrows: false,
+            }
+        },
+        {
+            breakpoint: 480, 
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true, 
+                centerPadding: "20px", 
+                arrows: false,
+                dots: true,
+            }
+        }
+    ]
+};
 
 
     return (
