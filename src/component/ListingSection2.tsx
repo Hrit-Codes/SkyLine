@@ -19,29 +19,25 @@ const settings = {
     arrows: false,
     responsive: [
         {
-            breakpoint: 1024, 
+            breakpoint: 1024,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
             }
         },
         {
-            breakpoint: 768, 
+            breakpoint: 768,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true, 
-                centerPadding: "40px", 
                 arrows: false,
             }
         },
         {
-            breakpoint: 480, 
+            breakpoint: 480,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true, 
-                centerPadding: "20px", 
                 arrows: false,
                 dots: true,
             }
@@ -49,13 +45,13 @@ const settings = {
     ]
 };
 
-    const visibleCount=3;
+    const visibleCount = 3;
 
     return (
         <div className="w-full">
 
-            {/* Slider Container */}
-            <div className="slider-container my-14 px-4 md:px-8 lg:px-16">
+            {/* Slider Container - Added overflow-hidden */}
+            <div className="slider-container my-14 px-4 md:px-8 lg:px-16 overflow-hidden">
                 {isLoading ? (
                     <div className="flex justify-center items-center h-84 gap-6">
                         {Array(visibleCount).fill(0).map((_, index) => (
@@ -65,7 +61,7 @@ const settings = {
                 ) : filteredProjectData.length > 0 ? (
                     <>
                         <Slider {...settings}>
-                            {filteredProjectData.map((item:projectCardData, i:number) => (
+                            {filteredProjectData.map((item: projectCardData, i: number) => (
                                 <div key={i} className="px-2 md:px-2 py-4">
                                     <ProjectCard item={item} />
                                 </div>
@@ -80,7 +76,7 @@ const settings = {
             </div>
             
             <div className="w-full flex justify-center py-10">
-                <Button variant="default" onClick={handleViewStatus} >
+                <Button variant="default" onClick={handleViewStatus}>
                     View All Projects
                 </Button>
             </div>

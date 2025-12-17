@@ -18,29 +18,25 @@ const settings = {
     arrows: false,
     responsive: [
         {
-            breakpoint: 1024, 
+            breakpoint: 1024,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
             }
         },
         {
-            breakpoint: 768, 
+            breakpoint: 768,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true, 
-                centerPadding: "40px", 
                 arrows: false,
             }
         },
         {
-            breakpoint: 480, 
+            breakpoint: 480,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true, 
-                centerPadding: "20px", 
                 arrows: false,
                 dots: true,
             }
@@ -48,9 +44,8 @@ const settings = {
     ]
 };
 
-
     return (
-        <div className="slider-container py-4">
+        <div className="slider-container py-4 overflow-hidden">
             <Slider {...settings} className="py-4">
                 {testimonials.map((t, i) => {
                     return (
