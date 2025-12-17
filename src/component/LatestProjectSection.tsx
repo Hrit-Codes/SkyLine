@@ -6,6 +6,18 @@ import { useQuery } from "@tanstack/react-query";
 import { type projectResponse, type projectCardData} from "@/interfaces/project";
 import ProjectCardSkeleton from "./ProjectCardSkeleton";
 
+const categories=[
+    {
+        label:"Residential",
+    },
+    {
+        label:"Commercial",
+    },
+    {
+        label:"Apartment"
+    }
+]
+
 export default function LatestProjectSection() {
     const [propertyType, setPropertyType] = useState("Residential");
     const [visibleCount, setVisibleCount] = useState(3);
@@ -53,30 +65,17 @@ export default function LatestProjectSection() {
             </div>
 
             <div className="flex flex-row justify-center gap-4 mb-10">
+                {categories.map((category)=>(
                 <Button
-                    variant={propertyType === "Residential" ? "default" : "outline"}
-                    onClick={() => handlePropertyTypeChange("Residential")}
+                    variant={propertyType === category.label ? "default" : "outline"}
+                    onClick={() => handlePropertyTypeChange(category.label)}
                     className="rounded-full px-6 text-sm sm:text-lg md:text-xl"
                 >
-                    Residential
+                    {category.label}
                 </Button>
-
-                <Button
-                    variant={propertyType === "Commercial" ? "default" : "outline"}
-                    onClick={() => handlePropertyTypeChange("Commercial")}
-                    className="rounded-full px-6 text-sm sm:text-lg md:text-xl"
-                >
-                    Commercial
-                </Button>
-
-                <Button
-                    variant={propertyType === "Apartment" ? "default" : "outline"}
-                    onClick={() => handlePropertyTypeChange("Apartment")}
-                    className="rounded-full px-6 text-sm sm:text-lg md:text-xl"
-                >
-                    Apartments
-                </Button>
+                ))}
             </div>
+
 
             <div className="flex justify-center">
                 {isLoading ? (

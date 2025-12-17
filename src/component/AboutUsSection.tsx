@@ -11,7 +11,7 @@ export default function AboutUsSection(){
         <div>
 
         <div className="w-full flex flex-col mt-10 lg:flex-row ">
-            <div className="w-full flex flex-col justify-center items-center gap-5 lg:w-1/2 ">
+            <div className="w-full flex flex-col justify-center items-center gap-5 lg:w-1/2  ">
                 <h1 className="text-center">A little bit about <br /><span className="text-primary font-roboto font-extrabold text-6xl!">The Skyline</span></h1>
                 <Button variant="default" className="transition-all duration-300 hover:translate-x-5" onClick={()=>navigate("/contact")}>
                     <p>Contact Us</p>
@@ -19,7 +19,7 @@ export default function AboutUsSection(){
                 </Button>
             </div>
 
-            <div className="w-full lg:w-1/2 ">
+            <div className="w-full lg:w-1/2 text-justify ">
                 <div className="p-2 ">
                     <h3>Your Local & loyal agent</h3>
                     <p className="!leading-[180%]">At The Skyline, we're more than just your local real estate agency; we're your loyal partners in finding the perfect place to call home. Our commitment to you goes beyond buying or selling properties - it's about building lasting relationships within our vibrant community.

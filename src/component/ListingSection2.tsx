@@ -37,7 +37,7 @@ export default function ListingSection2({isLoading ,filteredProjectData, handleV
         arrows: false,
     };
 
-    const visibleCount = 3;
+    const visibleCount = getSlidesToShow();;
 
     return (
         <div className="w-full">
