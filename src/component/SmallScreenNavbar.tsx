@@ -10,7 +10,7 @@ export default function SmallScreenNavbar(){
             <div className="mx-2  flex justify-between">
             <div className="flex flex-row justify-center items-center">
                 <img src={companyLogo} alt="Company Logo" />
-                <h1>Skyline</h1>
+                {/* <h1>Skyline</h1> */}
             </div>
             <div className="flex flex-row justify-center bg-primary-faint rounded-2xl p-4 border-white border-2">
             <DropdownMenu>
